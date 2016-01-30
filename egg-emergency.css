@@ -1,0 +1,214 @@
+/* ---------------------------------------
+
+Egg Emergency in only CSS
+A remake of the most fun minigame that existed in Pokemon Stadium.
+
+Repository: https://github.com/afonsopacifer/egg-emergency
+Website: http://afonsopacifer.github.io/egg-emergency/
+Author: Afonso Pacifer (afonsopacifer.com)
+MIT License
+
+--------------------------------------- * /
+
+
+/* Top bar
+--------------------------------------- */
+.top-bar {
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	height: 30px;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.star-btn {
+	margin-left: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+	.top-bar {
+		font-size: 14px;
+		-webkit-box-pack: left;
+		-webkit-justify-content: left;
+		    -ms-flex-pack: left;
+		        justify-content: left;
+		padding-left: 10px;
+	}
+
+	.star-btn {
+		display: none;
+	}
+}
+
+/* Game
+--------------------------------------- */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	counter-reset: score; /* Reset the score counter */
+
+	/* design only */
+	background-color: #8cc8f5;
+	background-image: url("img/bg.jpg");
+	background-position: bottom;
+	background-repeat: repeat-x;
+}
+
+/* Game
+--------------------------------------- */
+.game-container {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	height: calc(100% - 30px);
+	position: relative;
+	overflow: hidden;
+}
+
+.eggs-down-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-animation: eggs-down 10s;
+	        animation: eggs-down 10s;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+
+@-webkit-keyframes eggs-down {
+    from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+    to   {-webkit-transform: translateY(400px);transform: translateY(400px);}
+}
+
+@keyframes eggs-down {
+    from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
+    to   {-webkit-transform: translateY(400px);transform: translateY(400px);}
+}
+
+/* design only */
+.eggs-down-container:active ~ .chansey-container {
+	background-position: 50% 0%;
+}
+
+/* all left labels */
+.btn-left {
+	width: 50%;
+	height: 50px;
+	display: inline-block;
+}
+
+/* all right labels */
+.btn-right {
+	width: 50%;
+	height: 50px;
+	display: inline-block;
+}
+
+/* design only */
+.egg {
+	background: url("img/egg.png") no-repeat center;
+}
+
+/* to avoid that activate the checkbox before the right time */
+.controls-protect {
+	position: absolute;
+	top: 0px;
+	height: calc(100% - 200px);
+	width: 100%;
+	z-index: 2;
+}
+
+/* help */
+.hit-container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	bottom: 150px;
+	height: 50px;
+	pointer-events: none;
+}
+
+/* set all scores for inactive */
+.egg-check, .score-up {
+	display: none;
+}
+
+/* active one score with the egg has checked */
+.egg-check:checked + .score-up {
+  display: block;
+}
+
+/* get the egg */
+.egg-check:checked ~ .egg {
+  visibility: hidden;
+}
+
+.chansey-container {
+	position: absolute;
+	bottom: 0;
+	height: 150px;
+	width: 100%;
+	z-index: 2;
+	/* design only */
+	background: url("img/chansey.gif") no-repeat;
+	background-position: 50% 30%;
+	background-size: 150px 118px;
+}
+
+/* design only */
+.hit-container {
+	background-color: rgba(49,208,31,.1);
+	border: 1px dashed #1A750E;
+}
+
+/* increment the score counter */
+.score-up {
+	counter-increment: score;
+}
+
+/* show the total of active scores */
+.score-container {
+	position: absolute;
+	top: 0;
+	height: 150px;
+	width: 100%;
+	z-index: 3;
+}
+
+.score-container::before {
+  content: "Score "counter(score)"/50";
+
+  /* design only */
+  font-size: 30px;
+  padding: 10px;
+  display: block;
+  color: #fff;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  font-weight: 700;
+  text-align: center;
+}
