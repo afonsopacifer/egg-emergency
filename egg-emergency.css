@@ -94,20 +94,20 @@ body {
 	-webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
-	-webkit-animation: eggs-down 10s;
-	        animation: eggs-down 10s;
+	-webkit-animation: eggs-down 120s;
+	        animation: eggs-down 120s;
 	-webkit-animation-timing-function: linear;
 	        animation-timing-function: linear;
 }
 
 @-webkit-keyframes eggs-down {
     from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
-    to   {-webkit-transform: translateY(400px);transform: translateY(400px);}
+    to   {-webkit-transform: translateY(100%);transform: translateY(100%);}
 }
 
 @keyframes eggs-down {
     from {-webkit-transform: translateY(-100%);transform: translateY(-100%);}
-    to   {-webkit-transform: translateY(400px);transform: translateY(400px);}
+    to   {-webkit-transform: translateY(100%);transform: translateY(100%);}
 }
 
 /* design only */
