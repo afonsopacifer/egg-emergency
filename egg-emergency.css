@@ -18,7 +18,6 @@ MIT License
 	background-color: #000;
 	color: #fff;
 	height: 30px;
-	text-align: center;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -151,6 +150,24 @@ body {
 	bottom: 150px;
 	height: 50px;
 	pointer-events: none;
+
+/* design only */
+	background-color: rgba(49,208,31,.1);
+	border: 1px dashed #1A750E;
+	color: rgba(0,0,0,.3);
+	display: flex:block;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+		-ms-flex-pack: center;
+				justify-content: center;
+-webkit-box-align: center;
+-webkit-align-items: center;
+		-ms-flex-align: center;
+				align-items: center;
 }
 
 /* set all scores for inactive */
@@ -178,12 +195,6 @@ body {
 	background: url("img/chansey.gif") no-repeat;
 	background-position: 50% 30%;
 	background-size: 150px 118px;
-}
-
-/* design only */
-.hit-container {
-	background-color: rgba(49,208,31,.1);
-	border: 1px dashed #1A750E;
 }
 
 /* increment the score counter */
