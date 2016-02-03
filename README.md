@@ -10,6 +10,11 @@
 ## How to play?
 Click in the egg inside the green square and help the Chansey to save their eggs :)
 
+## Features
+- Only HTML, **CSS** and images (No Javascript)
+- Responsive
+- Offline first
+
 ## Contributing
 Want to contribute? [Follow these recommendations](https://github.com/afonsopacifer/egg-emergency/blob/gh-pages/CONTRIBUTING.md).
 
